@@ -36,7 +36,10 @@ body{
 }
 
 /* Navigation */
-
+.navbar{
+    margin-top:0;
+    padding-top:0;
+}
 .navbar ul{
     display:flex;
     list-style:none;
