@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safety Nets Website</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <!-- Logo -->
+    <div class="logo">
+        <a href="index.html" class="header-logo"><img src="logo web.png" alt="Logo"></a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Right Side -->
+    <div class="right-side">
+
+        <div class="phone">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 84249 10995</span>
+        </div>
+
+        <a href="estimate.html" class="quote-btn">
+            Get Estimate 
+        </a>
+
+        <div class="menu-btn" id="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </div>
+</header>
+
+
+
+
+
+
+<!-- product hero section -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+   /* ==================================
+   PRODUCT HERO SECTION
+================================== */
+
+.pp-product-hero,
+.pp-product-hero *,
+.pp-product-hero *::before,
+.pp-product-hero *::after{
+    box-sizing:border-box;
+}
+
+.pp-product-hero{
+    width:100%;
+    min-height:380px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:#08090b;
+
+    display:flex;
+    align-items:center;
+
+    font-family:'Poppins',sans-serif;
+}
+
+/* Background Pattern */
+
+.pp-product-hero__bg{
+    position:absolute;
+    inset:0;
+
+    z-index:1;
+    pointer-events:none;
+
+    background:
+    radial-gradient(circle at 92% 8%, rgba(255,112,16,.35), transparent 22%),
+    radial-gradient(circle at 100% 18%, rgba(255,112,16,.18), transparent 25%),
+    radial-gradient(rgba(255,255,255,.12) 1px, transparent 1px);
+
+    background-size:
+    100% 100%,
+    100% 100%,
+    28px 28px;
+}
+
+.pp-product-hero__bg::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(8,9,11,.98) 0%,
+        rgba(8,9,11,.95) 45%,
+        rgba(8,9,11,.82) 72%,
+        rgba(8,9,11,.55) 100%
+    );
+}
+
+/* Container */
+
+.pp-product-hero__container{
+    width:100%;
+    max-width:1400px;
+
+    margin:auto;
+
+    /* LEFT SIDE GAP */
+    padding:80px 70px;
+
+    position:relative;
+    z-index:2;
+}
+
+/* Content */
+
+.pp-product-hero__content{
+    max-width:850px;
+
+    opacity:0;
+    transform:translateY(28px);
+
+    transition:
+    opacity .9s ease,
+    transform .9s ease;
+}
+
+.pp-product-hero.pp-product-hero--show .pp-product-hero__content{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Badge */
+
+.pp-product-hero__tag{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(255,255,255,.18);
+
+    background:rgba(255,255,255,.03);
+
+    color:#ff7a0c;
+
+    font-size:12px;
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+}
+
+/* Title */
+
+.pp-product-hero__title{
+    margin:0;
+
+    color:#fff;
+
+    font-size:58px;
+    font-weight:700;
+
+    line-height:1.08;
+
+    letter-spacing:.8px;
+}
+
+/* Text */
+
+.pp-product-hero__text{
+    max-width:750px;
+
+    margin-top:18px;
+
+    color:#f0f0f0;
+
+    font-size:16px;
+    font-weight:400;
+
+    line-height:1.7;
+}
+
+/* =====================
+   LAPTOP
+===================== */
+
+@media (max-width:1200px){
+
+    .pp-product-hero{
+        min-height:340px;
+    }
+
+    .pp-product-hero__container{
+        padding:75px 55px;
+    }
+
+    .pp-product-hero__title{
+        font-size:48px;
+    }
+
+    .pp-product-hero__text{
+        font-size:15px;
+    }
+}
+
+/* =====================
+   TABLET
+===================== */
+
+@media (max-width:768px){
+
+    .pp-product-hero{
+        min-height:300px;
+    }
+
+    .pp-product-hero__container{
+        padding:65px 30px;
+    }
+
+    .pp-product-hero__tag{
+        font-size:10px;
+        padding:7px 12px;
+        letter-spacing:1.5px;
+    }
+
+    .pp-product-hero__title{
+        font-size:36px;
+        line-height:1.15;
+        font-weight:700;
+    }
+
+    .pp-product-hero__text{
+        font-size:14px;
+        line-height:1.6;
+        margin-top:14px;
+    }
+}
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width:480px){
+
+    .pp-product-hero{
+        min-height:260px;
+    }
+
+    .pp-product-hero__container{
+        padding:55px 20px;
+    }
+
+    .pp-product-hero__title{
+        font-size:28px;
+        line-height:1.2;
+    }
+
+    .pp-product-hero__text{
+        font-size:13px;
+    }
+
+    .pp-product-hero__bg{
+        background:
+        radial-gradient(circle at 95% 8%, rgba(255,112,16,.28), transparent 35%),
+        radial-gradient(rgba(255,255,255,.12) 1px, transparent 1px);
+
+        background-size:
+        100% 100%,
+        24px 24px;
+    }
+}
+  </style>
+</head>
+
+<body>
+
+  <section class="pp-product-hero" id="ppProductHero">
+    <div class="pp-product-hero__bg"></div>
+
+    <div class="pp-product-hero__container">
+      <div class="pp-product-hero__content">
+
+        <span class="pp-product-hero__tag">PRODUCTS</span>
+
+        <h1 class="pp-product-hero__title">
+          The right net for every<br>
+          space.
+        </h1>
+
+        <p class="pp-product-hero__text">
+          Residential, commercial and industrial-grade netting and turf — sourced from
+          trusted mills, installed by our own team.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const productHero = document.getElementById("ppProductHero");
+
+      if (!productHero) return;
+
+      window.addEventListener("load", function () {
+        productHero.classList.add("pp-product-hero--show");
+      });
+    })();
+  </script>
+
+
+
+
+
+
+
+
+<!-- Product Cards Section Start -->
+<section class="sp-product-cards" id="spProductCards">
+  <div class="sp-product-cards__container">
+
+    <div class="sp-product-cards__grid">
+
+      <!-- Card 1 -->
+      <article class="sp-product-card sp-product" data-sp-card>
+        <div class="sp-product-card__top">
+          <span class="sp-product-card__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2L19 5V11C19 15.4 16.15 19.45 12 21C7.85 19.45 5 15.4 5 11V5L12 2ZM12 4.2L7 6.35V11C7 14.3 8.95 17.35 12 18.85C15.05 17.35 17 14.3 17 11V6.35L12 4.2ZM12 7C12.55 7 13 7.45 13 8V10H15V12H13V15H11V12H9V10H11V8C11 7.45 11.45 7 12 7Z"/>
+            </svg>
+          </span>
+
+          <span class="sp-product-card__stock">IN STOCK</span>
+        </div>
+
+        <h3>Safety Nets</h3>
+
+        <p>
+          High-strength nylon safety nets for buildings, balconies and open spaces.
+        </p>
+
+        <div class="sp-product-card__bottom">
+          <span>Free site visit</span>
+
+          <a href="estimate.html" class="sp-product-card__enquire">
+            Enquire
+            <svg viewBox="0 0 24 24">
+              <path d="M13.5 5L20.5 12L13.5 19L12.1 17.6L16.7 13H4V11H16.7L12.1 6.4L13.5 5Z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="sp-product-card" data-sp-card>
+        <div class="sp-product-card__top">
+          <span class="sp-product-card__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M13 2L6 13H11L9 22L18 9H13L13 2ZM11.2 11L12.2 9.4V12H14.2L12 15.2L12.7 12H9.6L11.2 11Z"/>
+            </svg>
+          </span>
+
+          <span class="sp-product-card__stock">IN STOCK</span>
+        </div>
+
+        <h3>Anti-Bird Nets</h3>
+
+        <p>
+          Transparent, UV-stabilised nets that keep pigeons and birds out without harming them.
+        </p>
+
+        <div class="sp-product-card__bottom">
+          <span>Free site visit</span>
+
+          <a href="estimate.html" class="sp-product-card__enquire">
+            Enquire
+            <svg viewBox="0 0 24 24">
+              <path d="M13.5 5L20.5 12L13.5 19L12.1 17.6L16.7 13H4V11H16.7L12.1 6.4L13.5 5Z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="sp-product-card" data-sp-card>
+        <div class="sp-product-card__top">
+          <span class="sp-product-card__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 6H20V8H18V18H16V8H13V18H11V8H8V18H6V8H4V6ZM7 3H9V5H7V3ZM15 3H17V5H15V3ZM10 10H14V12H10V10ZM10 14H14V16H10V14Z"/>
+            </svg>
+          </span>
+
+          <span class="sp-product-card__stock">IN STOCK</span>
+        </div>
+
+        <h3>Construction Safety Nets</h3>
+
+        <p>
+          Heavy-duty debris and fall-arrest nets for active construction sites.
+        </p>
+
+        <div class="sp-product-card__bottom">
+          <span>Free site visit</span>
+
+          <a href="estimate.html" class="sp-product-card__enquire">
+            Enquire
+            <svg viewBox="0 0 24 24">
+              <path d="M13.5 5L20.5 12L13.5 19L12.1 17.6L16.7 13H4V11H16.7L12.1 6.4L13.5 5Z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="sp-product-card" data-sp-card>
+        <div class="sp-product-card__top">
+          <span class="sp-product-card__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 4C9.8 4 8 5.8 8 8C8 10.2 9.8 12 12 12C14.2 12 16 10.2 16 8C16 5.8 14.2 4 12 4ZM12 6C13.1 6 14 6.9 14 8C14 9.1 13.1 10 12 10C10.9 10 10 9.1 10 8C10 6.9 10.9 6 12 6ZM5 14L9 13L11 16V22H9V17L7.8 15.2L5.5 15.8L5 14ZM19 14L15 13L13 16V22H15V17L16.2 15.2L18.5 15.8L19 14Z"/>
+            </svg>
+          </span>
+
+          <span class="sp-product-card__stock">IN STOCK</span>
+        </div>
+
+        <h3>Cricket Practice Nets</h3>
+
+        <p>
+          Professional cricket nets with turf and impact-tested netting.
+        </p>
+
+        <div class="sp-product-card__bottom">
+          <span>Free site visit</span>
+
+          <a href="estimate.html" class="sp-product-card__enquire">
+            Enquire
+            <svg viewBox="0 0 24 24">
+              <path d="M13.5 5L20.5 12L13.5 19L12.1 17.6L16.7 13H4V11H16.7L12.1 6.4L13.5 5Z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="sp-product-card" data-sp-card>
+        <div class="sp-product-card__top">
+          <span class="sp-product-card__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 4C9.8 4 8 5.8 8 8C8 10.2 9.8 12 12 12C14.2 12 16 10.2 16 8C16 5.8 14.2 4 12 4ZM12 6C13.1 6 14 6.9 14 8C14 9.1 13.1 10 12 10C10.9 10 10 9.1 10 8C10 6.9 10.9 6 12 6ZM5 14L9 13L11 16V22H9V17L7.8 15.2L5.5 15.8L5 14ZM19 14L15 13L13 16V22H15V17L16.2 15.2L18.5 15.8L19 14Z"/>
+            </svg>
+          </span>
+
+          <span class="sp-product-card__stock">IN STOCK</span>
+        </div>
+
+        <h3>Football Turf Nets</h3>
+
+        <p>
+          Perimeter nets and artificial turf for 5/7-a-side football grounds.
+        </p>
+
+        <div class="sp-product-card__bottom">
+          <span>Free site visit</span>
+
+          <a href="estimate.html" class="sp-product-card__enquire">
+            Enquire
+            <svg viewBox="0 0 24 24">
+              <path d="M13.5 5L20.5 12L13.5 19L12.1 17.6L16.7 13H4V11H16.7L12.1 6.4L13.5 5Z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="sp-product-card" data-sp-card>
+        <div class="sp-product-card__top">
+          <span class="sp-product-card__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3L21 7L12 11L3 7L12 3ZM7.8 7L12 8.85L16.2 7L12 5.15L7.8 7ZM3 10L12 14L21 10V12.2L12 16.2L3 12.2V10ZM3 15L12 19L21 15V17.2L12 21.2L3 17.2V15Z"/>
+            </svg>
+          </span>
+
+          <span class="sp-product-card__stock">IN STOCK</span>
+        </div>
+
+        <h3>Artificial Grass & Lawn</h3>
+
+        <p>
+          Premium synthetic turf for homes, terraces and commercial spaces.
+        </p>
+
+        <div class="sp-product-card__bottom">
+          <span>Free site visit</span>
+
+          <a href="estimate.html" class="sp-product-card__enquire">
+            Enquire
+            <svg viewBox="0 0 24 24">
+              <path d="M13.5 5L20.5 12L13.5 19L12.1 17.6L16.7 13H4V11H16.7L12.1 6.4L13.5 5Z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 7 -->
+      <article class="sp-product-card" data-sp-card>
+        <div class="sp-product-card__top">
+          <span class="sp-product-card__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M11 2H13V5H11V2ZM11 19H13V22H11V19ZM2 11H5V13H2V11ZM19 11H22V13H19V11ZM4.2 5.6L5.6 4.2L7.7 6.3L6.3 7.7L4.2 5.6ZM16.3 17.7L17.7 16.3L19.8 18.4L18.4 19.8L16.3 17.7ZM18.4 4.2L19.8 5.6L17.7 7.7L16.3 6.3L18.4 4.2ZM6.3 16.3L7.7 17.7L5.6 19.8L4.2 18.4L6.3 16.3ZM12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7ZM12 9C10.35 9 9 10.35 9 12C9 13.65 10.35 15 12 15C13.65 15 15 13.65 15 12C15 10.35 13.65 9 12 9Z"/>
+            </svg>
+          </span>
+
+          <span class="sp-product-card__stock">IN STOCK</span>
+        </div>
+
+        <h3>Mosquito Nets</h3>
+
+        <p>
+          Window and balcony mosquito nets with concealed framing.
+        </p>
+
+        <div class="sp-product-card__bottom">
+          <span>Free site visit</span>
+
+          <a href="estimate.html" class="sp-product-card__enquire">
+            Enquire
+            <svg viewBox="0 0 24 24">
+              <path d="M13.5 5L20.5 12L13.5 19L12.1 17.6L16.7 13H4V11H16.7L12.1 6.4L13.5 5Z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="sp-product-card" data-sp-card>
+        <div class="sp-product-card__top">
+          <span class="sp-product-card__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 4C9.8 4 8 5.8 8 8C8 10.2 9.8 12 12 12C14.2 12 16 10.2 16 8C16 5.8 14.2 4 12 4ZM12 6C13.1 6 14 6.9 14 8C14 9.1 13.1 10 12 10C10.9 10 10 9.1 10 8C10 6.9 10.9 6 12 6ZM5 14L9 13L11 16V22H9V17L7.8 15.2L5.5 15.8L5 14ZM19 14L15 13L13 16V22H15V17L16.2 15.2L18.5 15.8L19 14Z"/>
+            </svg>
+          </span>
+
+          <span class="sp-product-card__stock">IN STOCK</span>
+        </div>
+
+        <h3>Coconut Safety Nets</h3>
+
+        <p>
+          Strong nets installed under coconut trees to catch falling fruits.
+        </p>
+
+        <div class="sp-product-card__bottom">
+          <span>Free site visit</span>
+
+          <a href="estimate.html" class="sp-product-card__enquire">
+            Enquire
+            <svg viewBox="0 0 24 24">
+              <path d="M13.5 5L20.5 12L13.5 19L12.1 17.6L16.7 13H4V11H16.7L12.1 6.4L13.5 5Z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 9 -->
+      <article class="sp-product-card" data-sp-card>
+        <div class="sp-product-card__top">
+          <span class="sp-product-card__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3L21 7L12 11L3 7L12 3ZM7.8 7L12 8.85L16.2 7L12 5.15L7.8 7ZM3 10L12 14L21 10V12.2L12 16.2L3 12.2V10ZM3 15L12 19L21 15V17.2L12 21.2L3 17.2V15Z"/>
+            </svg>
+          </span>
+
+          <span class="sp-product-card__stock">IN STOCK</span>
+        </div>
+
+        <h3>Tarpaulin Sheets</h3>
+
+        <p>
+          Waterproof tarpaulin for monsoon protection, roofing and storage.
+        </p>
+
+        <div class="sp-product-card__bottom">
+          <span>Free site visit</span>
+
+          <a href="estimate.html" class="sp-product-card__enquire">
+            Enquire
+            <svg viewBox="0 0 24 24">
+              <path d="M13.5 5L20.5 12L13.5 19L12.1 17.6L16.7 13H4V11H16.7L12.1 6.4L13.5 5Z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 10 -->
+      <article class="sp-product-card" data-sp-card>
+        <div class="sp-product-card__top">
+          <span class="sp-product-card__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M13 2L5 13H11L10 22L19 10H13L13 2ZM11.1 11L11.95 9.8V12H15L12.4 15.5L12.75 11H11.1Z"/>
+            </svg>
+          </span>
+
+          <span class="sp-product-card__stock">IN STOCK</span>
+        </div>
+
+        <h3>Bird Spikes</h3>
+
+        <p>
+          Stainless steel spikes for parapets, ledges and AC units.
+        </p>
+
+        <div class="sp-product-card__bottom">
+          <span>Free site visit</span>
+
+          <a href="estimate.html" class="sp-product-card__enquire">
+            Enquire
+            <svg viewBox="0 0 24 24">
+              <path d="M13.5 5L20.5 12L13.5 19L12.1 17.6L16.7 13H4V11H16.7L12.1 6.4L13.5 5Z"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+<!-- Product Cards Section End -->
+
+
+
+
+
+<style> 
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+/* Scoped Product Cards CSS */
+.sp-product-cards,
+.sp-product-cards * {
+  box-sizing: border-box;
+}
+
+.sp-product-cards {
+  width: 100%;
+  background: #ffffff;
+  padding: 55px 50px 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sp-product-cards__container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.sp-product-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Card */
+.sp-product-card {
+  min-height: 200px;
+  padding: 21px 22px 19px;
+  border: 1px solid #dddddd;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(28px) scale(0.97);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  transition-delay: var(--sp-delay, 0ms);
+}
+
+.sp-product-card.sp-product-card--show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Active first card */
+.sp-product-card--active {
+  border-color: #ff7a0c;
+  box-shadow: 0 13px 35px rgba(255, 122, 12, 0.12);
+}
+
+.sp-product-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: #ff7a0c;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+}
+
+/* Card top */
+.sp-product-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.sp-product-card__icon {
+  width: 39px;
+  height: 39px;
+  border-radius: 14px;
+  background: #050505;
+  color: #ff7a0c;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.sp-product-card--active .sp-product-card__icon {
+  background: #ff7a0c;
+  color: #000000;
+}
+
+.sp-product-card:hover .sp-product-card__icon {
+  background: #ff7a0c;
+  color: #000000;
+  transform: rotate(-6deg) scale(1.06);
+}
+
+.sp-product-card__icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.sp-product-card__stock {
+  color: #111111;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Text */
+.sp-product-card h3 {
+  margin: 0 0 8px;
+  color: #000000;
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.sp-product-card p {
+  margin: 0;
+  min-height: 45px;
+  color: #3c4856;
+  font-size: 10.5px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+/* Bottom */
+.sp-product-card__bottom {
+  margin-top: 19px;
+  padding-top: 15px;
+  border-top: 1px solid #dddddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sp-product-card__bottom span {
+  color: #3c4856;
+  font-size: 9.5px;
+  font-weight: 400;
+}
+
+.sp-product-card__enquire {
+  color: #ff6f00;
+  text-decoration: none;
+  font-size: 9.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.3s ease;
+}
+
+.sp-product-card__enquire svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.sp-product-card__enquire:hover {
+  color: #000000;
+}
+
+.sp-product-card__enquire:hover svg {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sp-product-cards__container {
+    max-width: 620px;
+  }
+
+  .sp-product-cards__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .sp-product-cards {
+    padding: 45px 16px 60px;
+  }
+
+  .sp-product-cards__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-product-card {
+    min-height: 185px;
+  }
+
+  .sp-product-card h3 {
+    font-size: 16px;
+  }
+
+  .sp-product-card p {
+    font-size: 12px;
+  }
+
+  .sp-product-card__bottom span,
+  .sp-product-card__enquire {
+    font-size: 11px;
+  }
+
+  .sp-product-card__stock {
+    font-size: 8px;
+  }
+}
+</style>
+<script> 
+  (function () {
+  const productSection = document.getElementById("spProductCards");
+
+  if (!productSection) return;
+
+  const cards = productSection.querySelectorAll("[data-sp-card]");
+  const enquireLinks = productSection.querySelectorAll(".sp-product-card__enquire");
+
+  cards.forEach(function (card, index) {
+    card.style.setProperty("--sp-delay", index * 10 + "ms");
+  });
+
+  const showCards = function () {
+    cards.forEach(function (card) {
+      card.classList.add("sp-product-card--show");
+    });
+  };
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      function (entries, observerInstance) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            showCards();
+            observerInstance.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.10
+      }
+    );
+
+    observer.observe(productSection);
+  } else {
+    showCards();
+  }
+
+  enquireLinks.forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = "estimate.html";
+    });
+  });
+})();
+</script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Floating WhatsApp & Call Buttons -->
+<div class="ss-floating-buttons">
+
+  <!-- WhatsApp Button -->
+  <div class="ss-float-wrap">
+    <a
+      href="https://wa.me/918424910995?text=Hello%20Shrisha%20Construction%20%26%20Safety%20Net%2C%0AI%20want%20to%20make%20an%20inquiry%20for%20your%20services%20or%20other%20requirements.%20Please%20share%20more%20details."
+      target="_blank"
+      rel="noopener"
+      class="ss-floating-btn ss-whatsapp-btn"
+      aria-label="WhatsApp Message"
+    >
+      <svg class="ss-floating-icon" viewBox="0 0 24 24">
+        <path d="M21 11.5C21 16.2 17 20 12 20c-1.5 0-2.9-.3-4.1-1L3 20l1.3-4.3C3.5 14.5 3 13 3 11.5 3 6.8 7 3 12 3s9 3.8 9 8.5z"></path>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Call Button -->
+  <div class="ss-float-wrap">
+    <a
+      href="tel:+918424910995"
+      class="ss-floating-btn ss-call-btn"
+      aria-label="Call Now"
+    >
+      <svg class="ss-floating-icon ss-call-icon" viewBox="0 0 24 24">
+        <path d="M22 16.9v3a2 2 0 0 1-2.2 2C10.4 21.2 2.8 13.6 2.1 4.2A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.2 1.2.5 2.4.9 3.5a2 2 0 0 1-.5 2.1L8.3 10.5c1.4 2.6 3.6 4.8 6.2 6.2l1.2-1.2a2 2 0 0 1 2.1-.5c1.1.4 2.3.7 3.5.9a2 2 0 0 1 1.7 2z"></path>
+      </svg>
+    </a>
+  </div>
+
+</div>
+
+
+<!-- Footer -->
+<!-- Footer Start -->
+<footer class="footer-section">
+  <div class="footer-container">
+
+    <!-- Logo + Description -->
+    <div class="footer-box footer-brand">
+      <a href="index.html" class="footer-logo">
+        <img src="logo4.png" alt="Your Logo" width="200px">
+      </a>
+
+      <p>
+        10+ years of excellence in safety nets, bird nets, artificial grass and turf
+        installations across Maharashtra.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-box footer-contact">
+      <h3>Contact</h3>
+
+      <div class="contact-item">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C8.14 2 5 5.14 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.14 15.86 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"/>
+          </svg>
+        </span>
+
+        <p>
+          Bhikumali Chawl, T.J. Road,<br>
+          Opp. Sundar Tower, Sewri, Mumbai<br>
+          400015
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.94C17.55 15.31 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.69 6.45 9.06 7.57C9.17 7.92 9.09 8.31 8.81 8.59L6.62 10.79Z"/>
+          </svg>
+        </span>
+
+        <a href="tel:+918424910995" id="footerCallLink">
+          +91 84249 10995
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+          </svg>
+        </span>
+
+        <a href="mailto:shrishasafetynet@gmail.com">
+          shrishasafetynet@gmail.com
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Shrisha Construction & Safety Nets. All rights reserved.</p>
+    <p>Serving Mumbai & across Maharashtra</p>
+  </div>
+</footer>
+<!-- Footer End -->
+
+<script src="script.js"></script>
+
+</body>
+</html>

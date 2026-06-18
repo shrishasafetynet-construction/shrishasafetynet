@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safety Nets Website</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <!-- Logo -->
+    <div class="logo">
+        <a href="index.html" class="header-logo"><img src="logo web.png" alt="Logo"></a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Right Side -->
+    <div class="right-side">
+
+        <div class="phone">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 84249 10995</span>
+        </div>
+
+        <a href="estimate.html" class="quote-btn">
+            Get Estimate
+        </a>
+
+        <div class="menu-btn" id="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </div>
+</header>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Gallery | Safety Nets</title>
+    
+    <!-- Google Fonts (Optional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+
+/* =========================
+   GALLERY SECTION (PRO FIXED)
+========================= */
+
+.sgx-gallery-section,
+.sgx-gallery-section *{
+  box-sizing:border-box;
+}
+
+.sgx-gallery-section{
+  width:100%;
+  padding:60px 5%;
+  background:#ffffff;
+}
+
+.sgx-gallery-container{
+  width:100%;
+  max-width:1320px;
+  margin:0 auto;
+}
+
+/* =========================
+   GRID (DESKTOP)
+========================= */
+
+.sgx-gallery-grid{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:210px;
+
+  gap:12px;
+
+  grid-auto-flow:dense;
+}
+
+/* =========================
+   ITEM CARD
+========================= */
+
+.sgx-gallery-item{
+  position:relative;
+  overflow:hidden;
+
+  border-radius:14px;
+
+  cursor:pointer;
+
+  background:#eee;
+
+  opacity:0;
+  transform:translateY(22px) scale(0.98);
+
+  transition:
+    opacity .6s ease,
+    transform .6s ease,
+    box-shadow .35s ease;
+}
+
+.sgx-gallery-item.sgx-gallery-show{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+.sgx-gallery-item:hover{
+  box-shadow:0 18px 40px rgba(0,0,0,0.18);
+}
+
+/* =========================
+   MEDIA (IMAGE / VIDEO)
+========================= */
+
+.sgx-gallery-item img,
+.sgx-gallery-item video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  transition:transform .5s ease;
+}
+
+.sgx-gallery-item:hover img,
+.sgx-gallery-item:hover video{
+  transform:scale(1.08);
+}
+
+/* =========================
+   SPECIAL SHAPES
+========================= */
+
+.sgx-gallery-tall{
+  grid-row:span 2;
+}
+
+.sgx-gallery-wide{
+  grid-column:span 2;
+}
+
+/* =========================
+   PLAY ICON
+========================= */
+
+.sgx-play-icon{
+  position:absolute;
+  inset:0;
+  margin:auto;
+
+  width:55px;
+  height:55px;
+
+  border-radius:50%;
+
+  background:rgba(255,122,12,0.95);
+  color:#000;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  pointer-events:none;
+
+  transition:.3s ease;
+}
+
+.sgx-play-icon svg{
+  width:28px;
+  height:28px;
+  fill:currentColor;
+}
+
+.sgx-gallery-video-item:hover .sgx-play-icon{
+  transform:scale(1.1);
+  opacity:.85;
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.sgx-gallery-lightbox{
+  position:fixed;
+  inset:0;
+
+  z-index:9999;
+
+  background:rgba(0,0,0,0.94);
+
+  display:none;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+}
+
+.sgx-gallery-lightbox.sgx-lightbox-active{
+  display:flex;
+}
+
+.sgx-lightbox-image,
+.sgx-lightbox-video{
+  max-width:92%;
+  max-height:85vh;
+
+  border-radius:12px;
+
+  display:none;
+
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+
+.sgx-lightbox-video{
+  width:min(900px,92%);
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.sgx-gallery-close{
+  position:absolute;
+  top:20px;
+  right:20px;
+
+  width:44px;
+  height:44px;
+
+  border:none;
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.12);
+  color:#fff;
+
+  font-size:34px;
+
+  cursor:pointer;
+
+  transition:.3s ease;
+}
+
+.sgx-gallery-close:hover{
+  background:#ff790f;
+  color:#000;
+  transform:rotate(90deg);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:991px){
+
+  .sgx-gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:200px;
+  }
+
+  .sgx-gallery-wide{
+    grid-column:span 2;
+  }
+}
+
+/* =========================
+   MOBILE (SIDE BY SIDE FIX)
+========================= */
+
+@media (max-width:600px){
+
+  .sgx-gallery-section{
+    padding:40px 16px;
+  }
+
+  .sgx-gallery-grid{
+    grid-template-columns:repeat(2,1fr); /* 👈 SIDE BY SIDE */
+    grid-auto-rows:150px;
+    gap:10px;
+  }
+
+  .sgx-gallery-tall,
+  .sgx-gallery-wide{
+    grid-column:span 1;
+    grid-row:span 1;
+  }
+
+  .sgx-play-icon{
+    width:45px;
+    height:45px;
+  }
+
+  .sgx-lightbox-image,
+  .sgx-lightbox-video{
+    max-width:95%;
+    max-height:80vh;
+  }
+}
+</style>
+
+</head>
+<body>
+
+
+<!-- ========================================== -->
+<!-- MAIN GALLERY SECTION                        -->
+<!-- Replace src paths with your actual files     -->
+<!-- ========================================== -->
+<!-- Safety Net Gallery Start -->
+<section class="sgx-gallery-section" id="sgxGallerySection">
+
+  <div class="sgx-gallery-container">
+
+    <div class="sgx-gallery-grid">
+
+      <!-- Image 1 -->
+      <div class="sgx-gallery-item">
+        <img src="net.jpg" alt="Safety net project 1">
+      </div>
+
+      <!-- Image 2 Tall -->
+      <div class="sgx-gallery-item sgx-gallery-tall">
+        <img src="building net.jpg" alt="Safety net project 2">
+      </div>
+
+      <!-- Video 1 -->
+      <div class="sgx-gallery-item sgx-gallery-video-item">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/project-video1.mp4" type="video/mp4">
+        </video>
+
+        <span class="sgx-play-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5V19L19 12L8 5Z"></path>
+          </svg>
+        </span>
+      </div>
+
+      <!-- Image 3 -->
+      <div class="sgx-gallery-item">
+        <img src="bird net.jpg" alt="Safety net project 3">
+      </div>
+
+      <!-- Image 4 Wide -->
+      <div class="sgx-gallery-item sgx-gallery-wide">
+        <img src="balcony net.jpg" alt="Safety net project 4">
+      </div>
+
+      <!-- Video 2 -->
+      <div class="sgx-gallery-item sgx-gallery-video-item">
+        <video muted loop playsinline preload="metadata">
+          <source src="videos/project-video2.mp4" type="video/mp4">
+        </video>
+
+        <span class="sgx-play-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5V19L19 12L8 5Z"></path>
+          </svg>
+        </span>
+      </div>
+
+      <!-- Image 5 -->
+      <div class="sgx-gallery-item">
+        <img src="footbal turf.jpg" alt="Safety net project 5">
+      </div>
+
+      <!-- Image 6 -->
+      <div class="sgx-gallery-item">
+        <img src="turf net.jpg" alt="Safety net project 6">
+      </div>
+
+      <!-- Image 7 -->
+      <div class="sgx-gallery-item">
+        <img src="crcicket 2.jpeg" alt="Safety net project 7">
+      </div>
+
+      <!-- Image 8 -->
+      <div class="sgx-gallery-item">
+        <img src="construct net.jpg" alt="Safety net project 8">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- Safety Net Gallery End -->
+
+
+<!-- Gallery Lightbox Start -->
+<div class="sgx-gallery-lightbox" id="sgxGalleryLightbox">
+
+  <button class="sgx-gallery-close" id="sgxGalleryClose" aria-label="Close Gallery">
+    &times;
+  </button>
+
+  <img class="sgx-lightbox-image" id="sgxLightboxImage" alt="Gallery preview">
+
+  <video class="sgx-lightbox-video" id="sgxLightboxVideo" controls playsinline>
+    <source src="" type="video/mp4">
+  </video>
+
+</div>
+<!-- Gallery Lightbox End -->
+
+
+    <!-- ========================================== -->
+    <!-- LIGHTBOX OVERLAY (Hidden by default)      -->
+    <!-- ========================================== -->
+    
+    <!-- This sits outside wrapper so it fills screen entirely -->
+    <div id="gLightbox" class="g-lightbox" role="dialog" aria-modal="true">
+        
+        <!-- Close X Button -->
+        <button class="g-close-btn" aria-label="Close lightbox">&times;</button>
+
+        <!-- Content Area (Image or Video) -->
+        <div class="g-lb-content">
+            <!-- Loaded dynamically via JS -->
+            <img id="gLbImg" class="g-lb-img" style="display:none;" alt="Full size preview">
+            
+            <video id="gLbVideo" class="g-lb-video" controls playsinline style="display:none;"></video>
+            
+            <!-- Loading Indicator -->
+            <div class="g-spinner" id="gLbSpinner" style="display:none;"></div>
+        </div>
+        
+        <!-- Navigation Arrows (Optional Enhancement) -->
+        <style>
+            .g-nav-arrow {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(0,0,0,0.5);
+                border: none;
+                color: white;
+                font-size: 30px;
+                padding: 12px 18px;
+                border-radius: 4px;
+                cursor: pointer;
+                opacity: 0;
+                transition: opacity 0.3s;
+                user-select: none;
+                z-index: 102;
+            }
+            .g-lightbox:hover .g-nav-arrow { opacity: 1; }
+            .g-prev { left: 20px; }
+            .g-next { right: 20px; }
+            @media(max-width:768px){ .g-nav-arrow{display:none;} } /* Hide arrows on touch devices */
+        </style>
+        <button class="g-nav-arrow g-prev" onclick="gNavigate(-1)">❮</button>
+        <button class="g-nav-arrow g-next" onclick="gNavigate(1)">❯</button>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ========================================== -->
+<!-- GALLERY JAVASCRIPT LOGIC                      */
+/* Handles Interactions & Data Flow              */
+/* Zero Dependencies                             -->
+<!-- ========================================== -->
+<script>
+(function () {
+  const gallerySection = document.getElementById("sgxGallerySection");
+
+  if (!gallerySection) return;
+
+  const galleryItems = gallerySection.querySelectorAll(".sgx-gallery-item");
+  const galleryVideos = gallerySection.querySelectorAll(".sgx-gallery-item video");
+
+  const lightbox = document.getElementById("sgxGalleryLightbox");
+  const closeBtn = document.getElementById("sgxGalleryClose");
+  const lightboxImg = document.getElementById("sgxLightboxImage");
+  const lightboxVideo = document.getElementById("sgxLightboxVideo");
+  const lightboxVideoSource = lightboxVideo.querySelector("source");
+
+  /* Stagger animation */
+  galleryItems.forEach(function (item, index) {
+    item.style.setProperty("--sgx-delay", index * 80 + "ms");
+  });
+
+  function showGalleryItems() {
+    galleryItems.forEach(function (item) {
+      item.classList.add("sgx-gallery-show");
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    const galleryObserver = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            showGalleryItems();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    galleryObserver.observe(gallerySection);
+  } else {
+    showGalleryItems();
+  }
+
+  /* Video play on hover */
+  galleryVideos.forEach(function (video) {
+    video.addEventListener("mouseenter", function () {
+      video.play().catch(function () {});
+    });
+
+    video.addEventListener("mouseleave", function () {
+      video.pause();
+      video.currentTime = 0;
+    });
+  });
+
+  /* Image click lightbox */
+  gallerySection.querySelectorAll(".sgx-gallery-item img").forEach(function (img) {
+    img.addEventListener("click", function () {
+      openImageLightbox(img.src, img.alt);
+    });
+  });
+
+  /* Video click lightbox */
+  galleryVideos.forEach(function (video) {
+    video.addEventListener("click", function () {
+      const source = video.querySelector("source");
+
+      if (!source) return;
+
+      openVideoLightbox(source.src);
+    });
+  });
+
+  function openImageLightbox(src, altText) {
+    pauseLightboxVideo();
+
+    lightbox.classList.add("sgx-lightbox-active");
+
+    lightboxVideo.style.display = "none";
+    lightboxImg.style.display = "block";
+
+    lightboxImg.src = src;
+    lightboxImg.alt = altText || "Gallery image";
+  }
+
+  function openVideoLightbox(src) {
+    lightbox.classList.add("sgx-lightbox-active");
+
+    lightboxImg.style.display = "none";
+    lightboxVideo.style.display = "block";
+
+    lightboxVideoSource.src = src;
+    lightboxVideo.load();
+    lightboxVideo.play().catch(function () {});
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("sgx-lightbox-active");
+
+    lightboxImg.src = "";
+
+    pauseLightboxVideo();
+    lightboxVideoSource.src = "";
+    lightboxVideo.load();
+  }
+
+  function pauseLightboxVideo() {
+    lightboxVideo.pause();
+    lightboxVideo.currentTime = 0;
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeLightbox);
+  }
+
+  if (lightbox) {
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && lightbox.classList.contains("sgx-lightbox-active")) {
+      closeLightbox();
+    }
+  });
+})();
+
+</script>
+
+</body>
+</html>
+
+
+<!-- Floating WhatsApp & Call Buttons -->
+<div class="ss-floating-buttons">
+
+  <!-- WhatsApp Button -->
+  <div class="ss-float-wrap">
+    <a
+      href="https://wa.me/918424910995?text=Hello%20Shrisha%20Construction%20%26%20Safety%20Net%2C%0AI%20want%20to%20make%20an%20inquiry%20for%20your%20services%20or%20other%20requirements.%20Please%20share%20more%20details."
+      target="_blank"
+      rel="noopener"
+      class="ss-floating-btn ss-whatsapp-btn"
+      aria-label="WhatsApp Message"
+    >
+      <svg class="ss-floating-icon" viewBox="0 0 24 24">
+        <path d="M21 11.5C21 16.2 17 20 12 20c-1.5 0-2.9-.3-4.1-1L3 20l1.3-4.3C3.5 14.5 3 13 3 11.5 3 6.8 7 3 12 3s9 3.8 9 8.5z"></path>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Call Button -->
+  <div class="ss-float-wrap">
+    <a
+      href="tel:+918424910995"
+      class="ss-floating-btn ss-call-btn"
+      aria-label="Call Now"
+    >
+      <svg class="ss-floating-icon ss-call-icon" viewBox="0 0 24 24">
+        <path d="M22 16.9v3a2 2 0 0 1-2.2 2C10.4 21.2 2.8 13.6 2.1 4.2A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.2 1.2.5 2.4.9 3.5a2 2 0 0 1-.5 2.1L8.3 10.5c1.4 2.6 3.6 4.8 6.2 6.2l1.2-1.2a2 2 0 0 1 2.1-.5c1.1.4 2.3.7 3.5.9a2 2 0 0 1 1.7 2z"></path>
+      </svg>
+    </a>
+  </div>
+
+</div>
+
+
+<!-- Footer -->
+<!-- Footer Start -->
+<footer class="footer-section">
+  <div class="footer-container">
+
+    <!-- Logo + Description -->
+    <div class="footer-box footer-brand">
+      <a href="index.html" class="footer-logo">
+        <img src="logo4.png" alt="Your Logo" width="200px">
+      </a>
+
+      <p>
+        10+ years of excellence in safety nets, bird nets, artificial grass and turf
+        installations across Maharashtra.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-box footer-contact">
+      <h3>Contact</h3>
+
+      <div class="contact-item">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C8.14 2 5 5.14 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.14 15.86 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"/>
+          </svg>
+        </span>
+
+        <p>
+          6/12 Bhikumali Chawl, T.J. Road,<br>
+          Opp. Sundar Tower, Sewri, Mumbai<br>
+          400015
+        </p>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.94C17.55 15.31 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.69 6.45 9.06 7.57C9.17 7.92 9.09 8.31 8.81 8.59L6.62 10.79Z"/>
+          </svg>
+        </span>
+
+        <a href="tel:+918424910995" id="footerCallLink">
+          +91 84249 10995
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+          </svg>
+        </span>
+
+        <a href="mailto:shrishasafetynet@gmail.com">
+          shrishasafetynet@gmail.com
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Shrisha Construction & Safety Nets. All rights reserved.</p>
+    <p>Serving Mumbai & across Maharashtra</p>
+  </div>
+</footer>
+<!-- Footer End -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
